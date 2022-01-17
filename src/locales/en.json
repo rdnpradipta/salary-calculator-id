@@ -1,0 +1,31 @@
+{
+  "logo": "Salary Calculator" ,
+  "top-title" : "Salary Calculator (with Tax and BPJS)",
+  "label": {
+    "language": "Language",
+    "dropdownDefault": "Choose one",
+    "monthlySalary": "Monthly Salary",
+    "bpjsJHT": "BPJS JHT Employee",
+    "bpjsJP": "BPJS JP Employee",
+    "bpjsKes": "BPJS Kesehatan",
+    "PPh21": "PPh21",
+    "netMonthlySalary": "Net Monthly Salary",
+    "taxPayerType": "Tax Payer Type",
+    "calcType": "Calculation Type",
+    "calcTypeNett": "Calculate Nett Salary",
+    "calcTypeGross": "Calculate Gross Salary",
+    "description": "Description",
+    "value": "Value",
+    "alert": {
+      "salaryEmpty": "Salary can't be empty",
+      "taxTypeEmpty": "Please choose tax type"
+    }
+  },
+  "taxPayerTypeDropdown": {
+    "personalTaxPayerNonMarried": "Personal Tax Payer",
+    "personalTaxPayerMarried": "Married Personal Tax Payer",
+    "personalTaxPayerMarried1C": "Married Personal Tax Payer with 1 Child",
+    "personalTaxPayerMarried2C": "Married Personal Tax Payer with 2 Children",
+    "personalTaxPayerMarried3C": "Married Personal Tax Payer with 3 Children"
+  }
+}

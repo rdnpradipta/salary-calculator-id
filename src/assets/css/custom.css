@@ -1,0 +1,174 @@
+/**********************
+*       General       *
+**********************/
+@font-face {
+    font-family: 'Noto Sans JP', sans-serif;
+}  
+
+header {
+    background-color: #3763ea;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+}
+
+header p{
+    font-family: UniSans;
+    color: #fff;
+    font-size: 25px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+#main{
+    min-height: calc(100vh - 160px - 60px - 160px);
+}
+
+.project-color{
+    background-color: #3763ea !important;
+    border-color: #3763ea !important;
+}
+
+.form-check-input.project-color{
+    background-color: #fff;
+}
+
+.form-check-input.project-color:checked{
+    background-color: #3763ea !important;
+    border-color: #3763ea !important;
+}
+
+h1.title{
+    margin: 50px 0;
+}
+
+div.card {
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+    border-radius: 0;
+}
+
+div.card-body {
+    padding: 2rem 1rem;
+}
+
+
+
+
+/**********************
+*      Calc Tbl       *
+**********************/
+
+div.card-body > div.row{
+    margin: 20px auto;
+}
+
+div.card.parameter > div.card-body div.col-sm-3 >p{
+    text-align: left;
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    div.card.parameter > div.card-body div.col-sm-3 >p{
+        text-align: left;
+        padding-left: 50px;
+    }    
+}
+
+.row>* {
+    padding: 0 !important;
+}
+
+.form-check  .form-check-input.lang-toggle{
+    position: relative;
+    float:none;
+    margin: .25em .5em auto;
+}
+
+.form-check, .form-switch{
+    padding: 0 !important;
+}
+
+.toggle-container{
+    padding-left: 0.4em;
+}
+.toggle{
+    width: 4rem;
+    height: 1.25rem;
+    padding: 0.1em;
+}
+
+.toggle.toggle-on{
+    background-color: #3763ea;
+    background: #3763ea;
+    border-color: #3763ea;
+}
+
+.toggle-label{
+    width: calc(var(--toggle-width, 3.75rem) - var(--toggle-height, 1.25rem));
+}
+
+.calc-type{
+    text-align: left;
+}
+
+.calc-type .form-check-inline{
+    padding-right: 50px;
+}
+
+/****************************
+*       Generated Tbl       *
+****************************/
+
+div.card.generated-table{
+    margin: 50px auto 100px;
+
+}
+
+.table-project {
+    --bs-table-bg: #3763ea;
+    --bs-table-striped-bg: #3763ea;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #3763ea;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #3763ea;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #3763ea;
+}
+
+
+/****************************
+*       NOTES SECTION       *
+****************************/
+.notes{
+    text-align: left;
+    color: darkgray;
+    font-size: 0.75em;
+    min-height: 160px;
+}
+
+
+.footer {
+    height: 100px;
+    background-color: #3763ea;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    min-width: 100%;vertical-align: middle
+}
+
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active{
+    color: white;
+    background-color: transparent;
+}
+
+.footer .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
