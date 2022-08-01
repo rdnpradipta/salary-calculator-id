@@ -6,7 +6,7 @@
 
 
                 If you want to contribute to this page, visit my
-            <a href="https://github.com/gettherefast/salary-calculator-id">github</a>
+            <a href="https://github.com/rdnpradipta/salary-calculator-id">github</a>
             </span>
     </div>
   </footer>
