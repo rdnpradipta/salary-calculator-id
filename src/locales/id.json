@@ -14,12 +14,12 @@
     "bpjsKes": "BPJS Kesehatan",
     "PPh21": "PPh21",
     "netMonthlySalary": "Gaji Net Bulanan",
-    "taxPayerType": "Tipe Wajib Pajak",
     "description": "Deskripsi",
     "value": "Nilai",
     "alert": {
       "salaryEmpty": "Gaji tidak boleh kosong",
-      "taxTypeEmpty": "Mohon pilih tipe wajib pajak"
+      "taxTypeEmpty": "Mohon pilih tipe wajib pajak",
+      "calcTypeEmpty": "Mohon pilih tipe perhitungan"
     },
     "notes": {
       "purpose": "Aplikasi ini dibuat hanya sebagai simulasi, bukan dimaksudkan untuk melakukan pembayaran karena mungkinnya terdapat perbedaan dengan kebijakan setiap perusahaan",

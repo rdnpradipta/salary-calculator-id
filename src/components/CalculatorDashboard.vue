@@ -40,7 +40,7 @@
             <div class="col-sm-9">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="salary-label">Rp</span>
-                <input type="number" class="form-control" id="salary" aria-describedby="salary-label">
+                <input type="text" v-model="salaryDisplay" class="form-control" id="salary" aria-describedby="salary-label" @focusout="formatSalary(salaryDisplay)" @focusin="unformatSalary(salaryDisplay)">
               </div>
             </div>
           </div>
@@ -78,23 +78,26 @@
 </template>
 
 <script>
-import GeneratedTable from "./GeneratedTable";
+import GeneratedTable from "./GeneratedTable"
 import Notes from "./Notes"
-import Footer from "./Footer";
+import Footer from "./Footer"
 import Toggle from '@vueform/toggle'
+import formatNumber from 'accounting-js/lib/formatNumber'
+import unformat from 'accounting-js/lib/unformat.js' 
 
 export default {
   data() {
     return {
       generatedOnce: false,
       componentKey: 0,
+      salaryDisplay: 0,
       salary: 0,
       taxPayerDropdownSelected: '',
       selectCalcType: '',
       langToggle: {
         value: true,
-        onLabel: '<span class="flag-icon flag-icon-id"></span> ID',
-        offLabel: 'EN <span class="flag-icon flag-icon-gb"></span>',
+        onLabel: '<span class="fi fi-id"></span> ID',
+        offLabel: 'EN <span class="fi fi-gb"></span>',
         trueValue: 'id',
         falseValue: 'en',
       },
@@ -120,6 +123,12 @@ export default {
   },
 
   methods: {
+    formatSalary(number) {
+      this.salaryDisplay = formatNumber(number);
+    },
+    unformatSalary(number) {
+      this.salaryDisplay = unformat(number);
+    },
     onChangeLocale() {
       this.$i18n.locale = this.langToggle.value
     },
@@ -135,10 +144,13 @@ export default {
     },
     check() {
       let self = this;
-      let salary = document.getElementById("salary").value;
       let taxPayerType = document.getElementById("taxPayerType").value;
       self.checkIfGeneratedMoreThanOnce();
-      if (!self.validateNull(salary)) {
+      if (!self.validateNull(this.selectCalcType)) {
+        alert(this.$t("label.alert.calcTypeEmpty"));
+        return;
+      }
+      if (!self.validateNull(this.salaryDisplay)) {
         alert(this.$t("label.alert.salaryEmpty"));
         return;
       }
@@ -147,7 +159,8 @@ export default {
         return;
       }
 
-      this.salary = salary;
+
+      this.salary = unformat(this.salaryDisplay);
       this.taxPayerType = taxPayerType;
       self.generateTable();
     },

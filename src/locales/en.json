@@ -18,7 +18,8 @@
     "value": "Value",
     "alert": {
       "salaryEmpty": "Salary can't be empty",
-      "taxTypeEmpty": "Please choose tax type"
+      "taxTypeEmpty": "Please choose tax type",
+      "calcTypeEmpty": "Please choose calculation type"
     }
   },
   "taxPayerTypeDropdown": {

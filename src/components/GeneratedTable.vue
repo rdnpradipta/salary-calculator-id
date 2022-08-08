@@ -108,13 +108,13 @@ export default {
         this.totalTax =+ taxableIncome*(5/95)
       }
       if(taxableIncome > COMMON_CONSTANT.TAX_GROSS_UP_LAYER_1_THRESHOLD && taxableIncome <= COMMON_CONSTANT.TAX_GROSS_UP_LAYER_2_THRESHOLD){
-        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_1_THRESHOLD)*(15/85)+2500000
+        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_1_THRESHOLD)*(15/85)+3000000
       }
       if(taxableIncome > COMMON_CONSTANT.TAX_LAYER_2_THRESHOLD && taxableIncome <= COMMON_CONSTANT.TAX_LAYER_3_THRESHOLD){
-        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_2_THRESHOLD)*(25/75)+32500000
+        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_2_THRESHOLD)*(25/75)+33000000
       }
       if(taxableIncome > COMMON_CONSTANT.TAX_LAYER_3_THRESHOLD){
-        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_3_THRESHOLD)*(30/70)+95000000
+        this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_3_THRESHOLD)*(30/70)+95500000
       }
       this.monthlyTax = this.totalTax/12
     },
