@@ -64,18 +64,18 @@ export default {
         bpjsJP = monthlySalary*COMMON_CONSTANT.BPJS_JP_GROSS_UP_MULTIPLIER
         bpjsKes = monthlySalary*COMMON_CONSTANT.BPJS_KES_GROSS_UP_MULTIPLIER
         console.log("bpjs MULT CHECK : "+COMMON_CONSTANT.BPJS_JHT_GROSS_UP_MULTIPLIER)
-        console.log("bpjs value: "+new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(bpjsJHT))
+        console.log("bpjs value: "+new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(bpjsJHT))
         netMonthlySalary = monthlySalary + this.monthlyTax + bpjsJHT + bpjsJP + bpjsKes
       }
 
       let monthlyTax = this.totalTax / 12
 
-      this.colData.push({desc: "label.monthlySalary", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(monthlySalary)})
-      this.colData.push({desc: "label.bpjsJHT", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(bpjsJHT)})
-      this.colData.push({desc: "label.bpjsJP", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(bpjsJP)})
-      this.colData.push({desc: "label.bpjsKes", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(bpjsKes)})
-      this.colData.push({desc: "label.PPh21", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(monthlyTax)})
-      this.colData.push({desc: "label.netMonthlySalary", value: new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(netMonthlySalary)})
+      this.colData.push({desc: "label.monthlySalary", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(monthlySalary)})
+      this.colData.push({desc: "label.bpjsJHT", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(bpjsJHT)})
+      this.colData.push({desc: "label.bpjsJP", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(bpjsJP)})
+      this.colData.push({desc: "label.bpjsKes", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(bpjsKes)})
+      this.colData.push({desc: "label.PPh21", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(monthlyTax)})
+      this.colData.push({desc: "label.netMonthlySalary", value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(netMonthlySalary)})
     },
     calculateNett(taxableIncome, totalTax, salaryDiff){
       console.log("MASUK NETT")
@@ -99,9 +99,9 @@ export default {
 
       this.totalTax = totalTax
       this.monthlyTax = this.totalTax/12
-      console.log(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(taxableIncome))
-      console.log(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(salaryDiff))
-      console.log(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(totalTax))
+      console.log(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(taxableIncome))
+      console.log(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(salaryDiff))
+      console.log(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(totalTax))
     },
     calculateGross(taxableIncome, totalTax){
       if(taxableIncome > 0 && taxableIncome <= COMMON_CONSTANT.TAX_GROSS_UP_LAYER_1_THRESHOLD){

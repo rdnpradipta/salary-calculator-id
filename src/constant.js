@@ -28,3 +28,13 @@ export const COMMON_CONSTANT = Object.freeze({
     TAX_GROSS_UP_LAYER_2_THRESHOLD: 217500000,
     TAX_GROSS_UP_LAYER_3_THRESHOLD: 405000000,
 });
+
+export const ACCOUNTINGJS_CONSTANTS = Object.freeze({
+    symbol: 'Rp',        
+    format: '%s%v',
+    decimal: '.',
+    thousand: ',',
+    precision: 0,
+    stripZeros: false,  
+    fallback: 0         
+})

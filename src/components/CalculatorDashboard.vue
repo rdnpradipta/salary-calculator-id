@@ -84,6 +84,7 @@ import Footer from "./Footer"
 import Toggle from '@vueform/toggle'
 import formatNumber from 'accounting-js/lib/formatNumber'
 import unformat from 'accounting-js/lib/unformat.js' 
+import ACCOUNTINGJS_CONSTANTS from "../constant";
 
 export default {
   data() {
@@ -124,10 +125,12 @@ export default {
 
   methods: {
     formatSalary(number) {
-      this.salaryDisplay = formatNumber(number);
+      number = unformat(number)
+      this.salaryDisplay = formatNumber(number, ACCOUNTINGJS_CONSTANTS)
+      
     },
     unformatSalary(number) {
-      this.salaryDisplay = unformat(number);
+      this.salaryDisplay = unformat(number, ACCOUNTINGJS_CONSTANTS)
     },
     onChangeLocale() {
       this.$i18n.locale = this.langToggle.value
