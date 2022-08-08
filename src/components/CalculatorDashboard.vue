@@ -17,18 +17,46 @@
             </div>
           </div>
 
-          <div class="row justify-content-around">
+          <div class="row">
             <div class="col-sm-3 ">
               <p>{{ $t("label.calcType") }}</p>
             </div>
             <div class="col-sm-9 calc-type">
-              <div class="form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="NETT" v-model="selectCalcType">
-                <label class="form-check-label" for="inlineRadio1">{{ $t("label.calcTypeNett") }}</label>
+              <div class="row"> 
+                <div class="flex-fill col-sm-4 calc-type">
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioCalc" id="inlineRadio3" value="NETT" v-model="selectCalcType">
+                    <label class="form-check-label" for="inlineRadio3">{{ $t("label.calcTypeNett") }}</label>
+                  </div>
+                </div>
+                <div class="flex-fill col-sm-4 calc-type">
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioCalc" id="inlineRadio4" value="GROSS" v-model="selectCalcType">
+                    <label class="form-check-label" for="inlineRadio4">{{ $t("label.calcTypeGross") }}</label>
+                  </div>
+                </div>
               </div>
-              <div class="form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="GROSS" v-model="selectCalcType">
-                <label class="form-check-label" for="inlineRadio2">{{ $t("label.calcTypeGross") }}</label>
+            </div>
+          </div>
+          
+          <div class="row justify-content-around">
+            <div class="col-sm-3 ">
+              <p>{{ $t("label.calculateBpjs") }}</p>
+            </div>
+            <div class="col-sm-9 calc-type">
+              <div class="row"> 
+                <div class="flex-fill col-sm-4 calc-type">
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioBpjs" id="inlineRadio1" value="1" v-model="selectBpjsCalcType">
+                    <label class="form-check-label" for="inlineRadio1">{{ $t("label.yes") }}</label>
+                  </div>
+                </div>
+                <div class="flex-fill col-sm-4 calc-type">
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioBpjs" id="inlineRadio2" value="0" v-model="selectBpjsCalcType">
+                    <label class="form-check-label" for="inlineRadio2">{{ $t("label.no") }}</label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -71,6 +99,7 @@
         :salaryProp="salary"
         :taxPayerDropdownSelectedProp="taxPayerDropdownSelected"
         :selectCalcTypeProp="selectCalcType"
+        :selectBpjsCalcTypeProp="selectBpjsCalcType"
     />
   </div>
   <Notes></Notes>
@@ -94,6 +123,7 @@ export default {
       salaryDisplay: 0,
       salary: 0,
       taxPayerDropdownSelected: '',
+      selectBpjsCalcType: '0',
       selectCalcType: '',
       langToggle: {
         value: true,
@@ -160,6 +190,12 @@ export default {
         alert(this.$t("label.alert.taxTypeEmpty"));
         return;
       }
+      if (!self.validateNull(this.selectBpjsCalcType)) {
+        alert(this.$t("label.alert.taxTypeEmpty"));
+        return;
+      }
+
+      
 
 
       this.salary = unformat(this.salaryDisplay);

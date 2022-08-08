@@ -111,8 +111,12 @@ div.card.parameter > div.card-body div.col-sm-3 >p{
     text-align: left;
 }
 
-.calc-type .form-check-inline{
-    padding-right: 50px;
+@media screen and (max-width: 576px) {
+    .calc-type .form-check-inline{
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    
 }
 
 /****************************
@@ -145,6 +149,7 @@ div.card.generated-table{
     color: darkgray;
     font-size: 0.75em;
     min-height: 160px;
+    padding-top: 50px;
 }
 
 

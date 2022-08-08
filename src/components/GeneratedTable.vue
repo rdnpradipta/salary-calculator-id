@@ -60,12 +60,24 @@ export default {
         }
 
         this.calculateNett(taxableIncome, totalTax)
-        bpjs = monthlySalary*COMMON_CONSTANT.BPJS_MULTIPLIER
+
+        if(this.selectBpjsCalcType == 0) {
+          bpjs = 0
+        } else {
+          bpjs = monthlySalary*COMMON_CONSTANT.BPJS_MULTIPLIER
+        }
+
         netMonthlySalary = monthlySalary - this.monthlyTax - bpjs
       }
 
       if(new String(calcType).valueOf() == new String("GROSS").valueOf()){
-        bpjs = monthlySalary*COMMON_CONSTANT.BPJS_GROSS_UP_MULTIPLIER
+        if(this.selectBpjsCalcType == 0) {
+          bpjs = 0
+        } else {
+          bpjs = monthlySalary*COMMON_CONSTANT.BPJS_GROSS_UP_MULTIPLIER
+        }
+        
+        
         
         let monthlySalaryIncBpjs = monthlySalary + bpjs
         let titleAllowanceGrossUp = monthlySalaryIncBpjs*COMMON_CONSTANT.TITLE_ALLOWANCE_GROSS_UP_PERCENTAGE
@@ -80,8 +92,7 @@ export default {
         if(taxableIncome > 0){
           taxableIncome -= (titleAllowanceGrossUp * 12)
         }
-        
-        console.log(taxableIncome)
+          
         this.calculateGross(taxableIncome)
         netMonthlySalary = monthlySalary + this.monthlyTax + bpjs
       }
@@ -146,19 +157,16 @@ export default {
         this.totalTax =+ (taxableIncome-COMMON_CONSTANT.TAX_GROSS_UP_LAYER_4_THRESHOLD)*(35/65)+1444*1000000
       }
       this.monthlyTax = this.totalTax/12
-
-      console.log("taxableIncome: " +taxableIncome)
-      console.log("totalTax: " +this.totalTax)
-      console.log("monthlyTax: " +this.monthlyTax)
     },
 
   },
-  props: ['salaryProp', 'taxPayerDropdownSelectedProp', 'selectCalcTypeProp'],
+  props: ['salaryProp', 'taxPayerDropdownSelectedProp', 'selectCalcTypeProp', 'selectBpjsCalcTypeProp'],
   data() {
     return {
       salary: this.salaryProp,
       taxPayerDropdownSelected: this.taxPayerDropdownSelectedProp,
       selectCalcType: this.selectCalcTypeProp,
+      selectBpjsCalcType: this.selectBpjsCalcTypeProp,
       colData: [],
       taxableIncome: 0,
       totalTax: 0,

@@ -2,6 +2,8 @@
   "logo": "Salary Calculator" ,
   "top-title" : "Salary Calculator (with Tax and BPJS)",
   "label": {
+    "yes": "Yes",
+    "no": "No",
     "language": "Language",
     "dropdownDefault": "Choose one",
     "monthlySalary": "Monthly Salary",
@@ -9,16 +11,22 @@
     "PPh21": "PPh21",
     "netMonthlySalary": "Net Monthly Salary",
     "taxPayerType": "Tax Payer Type",
+    "calculateBpjs": "Calculate BPJS",
     "calcType": "Calculation Type",
     "calcTypeNett": "Calculate Nett Salary",
     "calcTypeGross": "Calculate Gross Salary",
     "description": "Description",
     "value": "Value",
-    "titleAllowance": "Tunjangan Jabatan",
+    "titleAllowance": "Title Allowance",
     "alert": {
       "salaryEmpty": "Salary can't be empty",
       "taxTypeEmpty": "Please choose tax type",
       "calcTypeEmpty": "Please choose calculation type"
+    },
+    "notes": {
+      "misscalcNotice": "*There's known misscalulation bug on Gross Up calculation with BPJS calc turn on. Will be solved in the future.",
+      "disclaimer": "*The purpose of this tool is only for simulation, not for payment, there might be differences on taxable or non taxable variable from the company.",
+      "taxSource": "*The tax calcualtion formula is based on Personal Income Tax Law Article 17 section (1) and Law no. 7 Year 2021 on Harmonization of Tax Regulation."
     }
   },
   "taxPayerTypeDropdown": {
