@@ -40,7 +40,7 @@
             <div class="col-sm-9">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="salary-label">Rp</span>
-                <input type="text" v-model="salaryDisplay" class="form-control" id="salary" aria-describedby="salary-label" @focusout="formatSalary(salaryDisplay)" @focusin="unformatSalary(salaryDisplay)">
+                <input type="text" v-model="salaryDisplay" class="form-control" id="salary" aria-describedby="salary-label" @focusout="formatSalary(salaryDisplay)">
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ import Footer from "./Footer"
 import Toggle from '@vueform/toggle'
 import formatNumber from 'accounting-js/lib/formatNumber'
 import unformat from 'accounting-js/lib/unformat.js' 
-import ACCOUNTINGJS_CONSTANTS from "../constant";
+import {ACCOUNTINGJS_CONSTANTS} from "../constant";
 
 export default {
   data() {
@@ -102,7 +102,6 @@ export default {
         trueValue: 'id',
         falseValue: 'en',
       },
-
 
       taxPayerTypeDropdown: [
         {text: 'label.dropdownDefault', value: ''},

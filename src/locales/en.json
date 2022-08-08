@@ -5,9 +5,7 @@
     "language": "Language",
     "dropdownDefault": "Choose one",
     "monthlySalary": "Monthly Salary",
-    "bpjsJHT": "BPJS JHT Employee",
-    "bpjsJP": "BPJS JP Employee",
-    "bpjsKes": "BPJS Kesehatan",
+    "bpjs": "BPJS",
     "PPh21": "PPh21",
     "netMonthlySalary": "Net Monthly Salary",
     "taxPayerType": "Tax Payer Type",
@@ -16,6 +14,7 @@
     "calcTypeGross": "Calculate Gross Salary",
     "description": "Description",
     "value": "Value",
+    "titleAllowance": "Tunjangan Jabatan",
     "alert": {
       "salaryEmpty": "Salary can't be empty",
       "taxTypeEmpty": "Please choose tax type",
