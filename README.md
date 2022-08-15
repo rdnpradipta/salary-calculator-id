@@ -1,13 +1,15 @@
 # Salary Calculator
 This software can help you estimate your nett monthly salary, so you can easily calculate what's your actual nett salary from your contract.
 
+# Demo
+[Salary Calc Demo @vercel](https://salary-calculator-id.vercel.app/).
 
 
 ## Known Bug(s):
 - Misscalculation on gross up BPJS calculation (I suggest you to roughly estimate with nett calculator/non gross up)
 
 ## Todo:
-- [ ] Deploy to free hoster
+- [x] Deploy to free hoster
 - [ ] Fix Gross up BPJS calculation
 - [ ] Fix Language and translation inconsistencies
 
