@@ -1,4 +1,7 @@
-module.exports = {
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
+  lintOnSave: false,
   pluginOptions: {
     i18n: {
       locale: 'id',
@@ -11,4 +14,4 @@ module.exports = {
       fullInstall: true
     }
   }
-}
+})
